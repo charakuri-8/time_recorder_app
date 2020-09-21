@@ -5,9 +5,10 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(Icons.close),
-          color: Colors.black,
+          color: Colors.black87,
           onPressed: () {
             Navigator.pop(context);
           },
@@ -15,10 +16,9 @@ class AccountPage extends StatelessWidget {
         title: Text(
           'アカウント',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.black87,
           ),
         ),
-        backgroundColor: Colors.white,
       ),
     );
   }

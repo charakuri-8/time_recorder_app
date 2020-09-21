@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timerecorderapp/start_page.dart';
 import 'package:flutter/rendering.dart';
 
-void main() {
+void main() async {
   debugPaintSizeEnabled = false;
   runApp(MyApp());
 }
