@@ -32,6 +32,7 @@ dependencies:
   intl: ^0.16.1
   firebase_core: ^0.5.0
   cloud_firestore: ^0.14.0+2
+  flutter_launcher_icons: ^0.8.0
 
 dev_dependencies:
   flutter_native_splash: ^0.1.9
@@ -87,3 +88,8 @@ flutter:
 flutter_native_splash:
   image: assets/images/splash_new.png
   color: "ffffff"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
