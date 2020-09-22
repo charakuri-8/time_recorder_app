@@ -1,10 +1,34 @@
 import 'package:flutter/material.dart';
 
-class StartModel extends ChangeNotifier {
-  String datetime = '2020年9月27日';
+// テンキーパッド
+class TenKeyPad extends StatelessWidget {
+  TenKeyPad(this._key);
 
-  void changeDatetime() {
-    datetime = '2020年10月27日';
-    notifyListeners();
+  final _key;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: SizedBox.expand(
+        child: RaisedButton(
+          color: Colors.white,
+          child: Text(
+            _key,
+            style: TextStyle(
+              fontSize: 65.0,
+            ),
+          ),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+              color: Colors.black54,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(5.0),
+            ),
+          ),
+          onPressed: () {},
+        ),
+      ),
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:timerecorderapp/account_page.dart';
 import 'package:timerecorderapp/help_page.dart';
+import 'package:timerecorderapp/start_model.dart';
 
 class StartPage extends StatelessWidget {
   @override
@@ -144,6 +145,7 @@ class StartPage extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: Container(
+                                color: Colors.black12,
                                 child: Align(
                                   alignment: Alignment.center,
                                   child: Text(
@@ -151,16 +153,11 @@ class StartPage extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 60.0,
                                       letterSpacing: 12.0,
-                                      color: Colors.grey,
+                                      color: Colors.black26,
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Divider(
-                              thickness: 1.0,
-                              color: Colors.grey,
-                              height: 0.0,
                             ),
                             Expanded(
                               flex: 3,
@@ -174,58 +171,34 @@ class StartPage extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: <Widget>[
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '7',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '4',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '1',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
+                                          TenKeyPad('7'),
+                                          TenKeyPad('4'),
+                                          TenKeyPad('1'),
+                                          TenKeyPad(''),
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: <Widget>[
+                                          TenKeyPad('8'),
+                                          TenKeyPad('5'),
+                                          TenKeyPad('2'),
+                                          TenKeyPad('0'),
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: <Widget>[
+                                          TenKeyPad('9'),
+                                          TenKeyPad('6'),
+                                          TenKeyPad('3'),
+                                          TenKeyPad(''),
                                         ],
                                       ),
                                     ),
@@ -236,11 +209,33 @@ class StartPage extends StatelessWidget {
                                         children: <Widget>[
                                           Expanded(
                                             child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '8',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
+                                              child: RaisedButton(
+                                                color: Colors.redAccent,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: <Widget>[
+                                                    Icon(
+                                                      Icons.backspace,
+                                                      size: 60.0,
+                                                      color: Colors.white,
+                                                    ),
+                                                    Text(
+                                                      '戻る',
+                                                      style: TextStyle(
+                                                        fontSize: 20.0,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                    color: Colors.black54,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                    Radius.circular(5.0),
                                                   ),
                                                 ),
                                                 onPressed: () {},
@@ -249,157 +244,33 @@ class StartPage extends StatelessWidget {
                                           ),
                                           Expanded(
                                             child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '5',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
+                                              child: RaisedButton(
+                                                color: Colors.blueAccent,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: <Widget>[
+                                                    Icon(
+                                                      Icons.keyboard_return,
+                                                      size: 60.0,
+                                                      color: Colors.white,
+                                                    ),
+                                                    Text(
+                                                      '決定',
+                                                      style: TextStyle(
+                                                        fontSize: 20.0,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '2',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
+                                                shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                    color: Colors.black54,
                                                   ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '0',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '9',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '6',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '3',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
-                                                  ),
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: SizedBox.expand(
-                                              child: OutlineButton(
-                                                child: Text(
-                                                  '',
-                                                  style: TextStyle(
-                                                    fontSize: 62.0,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                    Radius.circular(5.0),
                                                   ),
                                                 ),
                                                 onPressed: () {},
@@ -436,7 +307,7 @@ class StartPage extends StatelessWidget {
                               Container(
                                 padding: const EdgeInsets.all(5.0),
                                 child: Text(
-                                  '社員番号',
+                                  '社員番号を入力',
                                   style: TextStyle(
                                     fontSize: 18.0,
                                     color: Colors.white,
