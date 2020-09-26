@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:timerecorderapp/choice_page.dart';
 import 'package:timerecorderapp/start_page.dart';
 import 'package:flutter/rendering.dart';
 
 void main() async {
-  debugPaintSizeEnabled = false;
+  debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "NotoSansJP",
       ),
-      home: StartPage(),
+      home: ChoicePage(),
     );
   }
 }
